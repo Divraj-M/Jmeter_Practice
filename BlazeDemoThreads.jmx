@@ -5,25 +5,27 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
-        <intProp name="ThreadGroup.num_threads">20</intProp>
-        <intProp name="ThreadGroup.ramp_time">10</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.num_threads">${Thread}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${Rampup}</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <stringProp name="LoopController.loops">5</stringProp>
+          <stringProp name="LoopController.loops">${Loop}</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Launch">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Launch" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
+          <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
             <collectionProp name="AuthManager.auth_list">
               <elementProp name="" elementType="Authorization">
                 <stringProp name="Authorization.url">https://android.clients.google.com/c2dm/</stringProp>
@@ -53,9 +55,9 @@
             <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
           </AuthManager>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/-13">
-            <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/-13" enabled="true">
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port">${Port}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -122,7 +124,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Find Flights">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Find Flights" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
@@ -153,9 +155,9 @@ vars.put(&apos;place1&apos;, place1)
 vars.put(&apos;place2&apos;, place2)</stringProp>
           </JSR223PreProcessor>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/reserve.php-24">
-            <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/reserve.php-24" enabled="true">
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port">${Port}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/reserve.php</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -182,7 +184,7 @@ vars.put(&apos;place2&apos;, place2)</stringProp>
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Sec-Fetch-Mode" elementType="Header">
                   <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
@@ -274,12 +276,12 @@ log.info(&quot;------------------------------&quot;)</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Choose Flights">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Choose Flights" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -341,9 +343,9 @@ if (!flightList.isEmpty()) {
 </stringProp>
           </JSR223PreProcessor>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/purchase.php-59">
-            <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/purchase.php-59" enabled="true">
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port">${Port}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/purchase.php</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -391,7 +393,7 @@ if (!flightList.isEmpty()) {
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Sec-Fetch-Mode" elementType="Header">
                   <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
@@ -460,7 +462,7 @@ if (!flightList.isEmpty()) {
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
               <collectionProp name="Asserion.test_strings">
                 <stringProp name="-1097302452">Your flight from TLV to SFO has been reserved.</stringProp>
               </collectionProp>
@@ -471,7 +473,7 @@ if (!flightList.isEmpty()) {
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -487,7 +489,7 @@ if (!flightList.isEmpty()) {
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -524,32 +526,32 @@ if (!flightList.isEmpty()) {
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
         </DebugSampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
-        <intProp name="ThreadGroup.num_threads">5</intProp>
-        <intProp name="ThreadGroup.ramp_time">5</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.num_threads">${Thread}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${Rampup}</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <stringProp name="LoopController.loops">2</stringProp>
+          <stringProp name="LoopController.loops">${Loop}</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Launch">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Launch" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/-45">
-            <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/-45" enabled="true">
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port">${Port}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -616,12 +618,12 @@ if (!flightList.isEmpty()) {
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Find Flights">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Find Flights" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -648,8 +650,8 @@ vars.put(&apos;place2&apos;, place2)</stringProp>
           </JSR223PreProcessor>
           <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/reserve.php-56">
-            <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port">${Port}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/reserve.php</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -755,8 +757,43 @@ vars.put(&apos;place2&apos;, place2)</stringProp>
               <intProp name="Assertion.test_type">2</intProp>
             </ResponseAssertion>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+// Get the response
+String html = prev.getResponseDataAsString();
+
+// Parse HTML and extract &lt;h3&gt; content
+Document doc = Jsoup.parse(html);
+String h3Text = doc.select(&quot;h3&quot;).text();  // Example: &quot;Flights from Philadelphia to London:&quot;
+
+// Save full h3 text in a variable
+vars.put(&quot;fullH3Text&quot;, h3Text);
+
+// Now extract just the city names using substring
+if (h3Text.contains(&quot;from&quot;) &amp;&amp; h3Text.contains(&quot;to&quot;)) {
+    int fromIndex = h3Text.indexOf(&quot;from&quot;) + 5;
+    int toIndex = h3Text.indexOf(&quot;to&quot;);
+    int endIndex = h3Text.indexOf(&quot;:&quot;);
+
+    String cityFrom = h3Text.substring(fromIndex, toIndex).trim();
+    String cityTo = h3Text.substring(toIndex + 3, endIndex).trim();
+
+    vars.put(&quot;cityFrom&quot;, cityFrom); // Philadelphia
+    vars.put(&quot;cityTo&quot;, cityTo);     // London
+    log.info(&quot;✈️ Extracted: &quot; + cityFrom + &quot; to &quot; + cityTo);
+} else {
+    log.warn(&quot;⚠️ H3 text format is unexpected: &quot; + h3Text);
+}
+</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -836,8 +873,8 @@ if (!flightList.isEmpty()) {
           </JSR223PreProcessor>
           <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/purchase.php-59">
-            <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port">${Port}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/purchase.php</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -856,14 +893,14 @@ if (!flightList.isEmpty()) {
                 <elementProp name="price" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">price</stringProp>
-                  <stringProp name="Argument.value">${selectedFlight.price}</stringProp>
+                  <stringProp name="Argument.value">${selectedFlightPrice}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
                 <elementProp name="airline" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
                   <stringProp name="Argument.name">airline</stringProp>
-                  <stringProp name="Argument.value">${selectedFlight.airline}</stringProp>
+                  <stringProp name="Argument.value">${selectedAirline}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
@@ -885,7 +922,7 @@ if (!flightList.isEmpty()) {
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Sec-Fetch-Mode" elementType="Header">
                   <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
@@ -954,7 +991,7 @@ if (!flightList.isEmpty()) {
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
               <collectionProp name="Asserion.test_strings">
                 <stringProp name="-1097302452">Your flight from TLV to SFO has been reserved.</stringProp>
               </collectionProp>
@@ -964,8 +1001,29 @@ if (!flightList.isEmpty()) {
               <intProp name="Assertion.test_type">2</intProp>
             </ResponseAssertion>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// Get the response text
+String response = prev.getResponseDataAsString();
+
+// Define the expected message
+String expectedText = &quot;Please submit the form below to purchase the flight.&quot;;
+
+// Compare (case-sensitive)
+if (response.contains(expectedText)) {
+    log.info(&quot;✅ Expected message found in response: &quot; + expectedText);
+    vars.put(&quot;purchaseFormPresent&quot;, &quot;true&quot;);
+} else {
+    log.warn(&quot;❌ Expected message NOT found in response!&quot;);
+    vars.put(&quot;purchaseFormPresent&quot;, &quot;false&quot;);
+}
+</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -981,14 +1039,14 @@ if (!flightList.isEmpty()) {
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Purchase Flights">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Purchase Flights" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/confirmation.php-84">
-            <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port">${Port}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
             <stringProp name="HTTPSampler.path">/confirmation.php</stringProp>
@@ -1158,6 +1216,27 @@ if (!flightList.isEmpty()) {
               <intProp name="Assertion.test_type">2</intProp>
             </ResponseAssertion>
             <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion">
+              <stringProp name="BeanShellAssertion.query">// Get the previous response as string
+String response = prev.getResponseDataAsString();
+
+// Define the string you are checking
+String successMessage = &quot;Thank you for your purchase today!&quot;;
+
+// Do the comparison
+if (response.contains(successMessage)) {
+    log.info(&quot;✅ Purchase confirmed: &apos;&quot; + successMessage + &quot;&apos;&quot;);
+    vars.put(&quot;purchaseConfirmed&quot;, &quot;true&quot;);
+} else {
+    log.warn(&quot;❌ Purchase message not found!&quot;);
+    vars.put(&quot;purchaseConfirmed&quot;, &quot;false&quot;);
+}
+</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
           </hashTree>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
@@ -1262,6 +1341,36 @@ if (!flightList.isEmpty()) {
         </ResultCollector>
         <hashTree/>
       </hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="Thread" elementType="Argument">
+            <stringProp name="Argument.name">Thread</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Rampup" elementType="Argument">
+            <stringProp name="Argument.name">Rampup</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Loop" elementType="Argument">
+            <stringProp name="Argument.name">Loop</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="URL" elementType="Argument">
+            <stringProp name="Argument.name">URL</stringProp>
+            <stringProp name="Argument.value">blazedemo.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Port" elementType="Argument">
+            <stringProp name="Argument.name">Port</stringProp>
+            <stringProp name="Argument.value">443</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
