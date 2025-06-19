@@ -15,7 +15,7 @@
         <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
       </CookieManager>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Login">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Login" enabled="true">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -394,7 +394,7 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor">
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
@@ -714,7 +714,7 @@ try {
           <boolProp name="displaySystemProperties">false</boolProp>
         </DebugSampler>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -752,7 +752,7 @@ try {
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Register">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Register" enabled="true">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -763,7 +763,7 @@ try {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Launch">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Launch" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
@@ -1398,7 +1398,7 @@ log.info(&quot;📧 Dynamic Email Generated: &quot; + email);
           <boolProp name="displaySystemProperties">false</boolProp>
         </DebugSampler>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -2493,7 +2493,7 @@ if (!found) {
         </DebugSampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Checkout-Step">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Checkout-Step" enabled="true">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -2583,7 +2583,7 @@ if (!found) {
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/login-28">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/login-28" enabled="true">
             <stringProp name="HTTPSampler.domain">demowebshop.tricentis.com</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -2654,7 +2654,7 @@ if (!found) {
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <BeanShellTimer guiclass="TestBeanGUI" testclass="BeanShellTimer" testname="BeanShell Timer">
+            <BeanShellTimer guiclass="TestBeanGUI" testclass="BeanShellTimer" testname="BeanShell Timer" enabled="true">
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
@@ -2777,7 +2777,7 @@ delay; // Important: return delay in milliseconds
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor">
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
@@ -3125,7 +3125,7 @@ try {
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor">
               <boolProp name="resetInterpreter">false</boolProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
@@ -3174,7 +3174,7 @@ try {
           </DebugSampler>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Addtocart">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Addtocart" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
@@ -3286,7 +3286,7 @@ try {
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
-          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler">
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
             <stringProp name="BeanShellSampler.query">import org.json.JSONObject;
 
 // Get response data
@@ -3490,7 +3490,7 @@ try {
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/cart-57">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/cart-57" enabled="true">
             <stringProp name="HTTPSampler.domain">demowebshop.tricentis.com</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -3608,7 +3608,7 @@ try {
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor">
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
               <boolProp name="resetInterpreter">false</boolProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
@@ -3622,7 +3622,7 @@ log.info(&quot;🛒 Random Quantity Generated: &quot; + quantity);
             </BeanShellPreProcessor>
             <hashTree/>
           </hashTree>
-          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler">
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
             <stringProp name="BeanShellSampler.query">import org.jsoup.*;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
@@ -3633,36 +3633,43 @@ boolean success = false;
 String html = &quot;&quot;;
 
 while (retryCount &lt; maxRetries &amp;&amp; !success) {
-    html = prev.getResponseDataAsString();
-    Document doc = Jsoup.parse(html);
+    try {
+        html = prev.getResponseDataAsString();
+        Document doc = Jsoup.parse(html);
 
-    Elements cartRows = doc.select(&quot;tr.cart-item-row&quot;);
+        Elements cartRows = doc.select(&quot;tr.cart-item-row&quot;);
 
-    if (cartRows.size() &gt; 0) {
-        success = true;
-        log.info(&quot;✅ Found &quot; + cartRows.size() + &quot; items in cart.&quot;);
-        int index = 1;
-        for (Element row : cartRows) {
-            String name = row.select(&quot;.product-name&quot;).text();
-            String productUrl = row.select(&quot;.product-name&quot;).attr(&quot;href&quot;);
-            String qty = row.select(&quot;input.qty-input&quot;).val();
-            String price = row.select(&quot;.product-unit-price&quot;).text();
-            String subtotal = row.select(&quot;.product-subtotal&quot;).text();
+        if (cartRows.size() &gt; 0) {
+            success = true;
+            log.info(&quot;✅ Found &quot; + cartRows.size() + &quot; items in cart.&quot;);
+            int index = 1;
+            for (Element row : cartRows) {
+                String name = row.select(&quot;.product-name&quot;).text();
+                String productUrl = row.select(&quot;.product-name&quot;).attr(&quot;href&quot;);
+                String qty = row.select(&quot;input.qty-input&quot;).val();
+                String price = row.select(&quot;.product-unit-price&quot;).text();
+                String subtotal = row.select(&quot;.product-subtotal&quot;).text();
 
-            log.info(&quot;🛒 Item &quot; + index + &quot;:&quot;);
-            log.info(&quot;🔹 Name     : &quot; + name);
-            log.info(&quot;🔹 URL      : &quot; + productUrl);
-            log.info(&quot;🔹 Qty      : &quot; + qty);
-            log.info(&quot;🔹 Price    : &quot; + price);
-            log.info(&quot;🔹 Subtotal : &quot; + subtotal);
-            log.info(&quot;--------------------------------------------------&quot;);
+                log.info(&quot;🛒 Item &quot; + index + &quot;:&quot;);
+                log.info(&quot;🔹 Name     : &quot; + name);
+                log.info(&quot;🔹 URL      : &quot; + productUrl);
+                log.info(&quot;🔹 Qty      : &quot; + qty);
+                log.info(&quot;🔹 Price    : &quot; + price);
+                log.info(&quot;🔹 Subtotal : &quot; + subtotal);
+                log.info(&quot;--------------------------------------------------&quot;);
 
-            index++;
+                index++;
+            }
+        } else {
+            retryCount++;
+            log.warn(&quot;⚠️ Attempt &quot; + retryCount + &quot; failed: No cart items found.&quot;);
+            Thread.sleep(1000); // Wait 1 second before retry
         }
-    } else {
+
+    } catch (Exception e) {
         retryCount++;
-        log.warn(&quot;⚠️ Attempt &quot; + retryCount + &quot; failed: No cart items found.&quot;);
-        Thread.sleep(1000); // Wait 1 second before retry
+        log.error(&quot;❌ Exception at attempt &quot; + retryCount + &quot;: &quot; + e.getMessage());
+        Thread.sleep(1000); // Wait before next retry
     }
 }
 
@@ -3673,7 +3680,7 @@ if (!success) {
           </BeanShellSampler>
           <hashTree/>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
